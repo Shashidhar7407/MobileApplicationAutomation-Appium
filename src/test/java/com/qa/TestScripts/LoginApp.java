@@ -7,12 +7,14 @@ import io.appium.java_client.AppiumBy;
 // import io.appium.java_client.android.AndroidDriver;
 // import io.appium.java_client.android.AndroidDriver;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class LoginApp extends BaseConfigurationServer {
     @Test
-    public void LoginApplication() throws InterruptedException {
+    public void LoginApplication() throws InterruptedException, IOException {
         System.out.println("Performing Login action");
         object1.ClickgetStartedArrow();
         object1.ClickgetStartedArrow();
@@ -28,9 +30,11 @@ public class LoginApp extends BaseConfigurationServer {
         object1.EnterPassword().sendKeys("Shashi@8131#");
         Thread.sleep(7000);
         object1.clickProceedButton().click();
+        takeScreenshot(driver, "src\\test\\java\\com\\Screenshots\\LoginPage.png");
         Thread.sleep(15000);
         System.out.println("Entered to homescreen");
         Thread.sleep(10000);
+        takeScreenshot(driver, "src\\test\\java\\com\\Screenshots\\HomeScreen.png");
         WebElement titleHomepageString = driver.findElement(AppiumBy.id("com.brevistay.customer:id/textView25"));
         String nameTitle = titleHomepageString.getText();
         System.out.println(nameTitle);
@@ -39,11 +43,6 @@ public class LoginApp extends BaseConfigurationServer {
         String benefitCardString = benefitCard.getText();
         System.out.println(benefitCardString);
         Thread.sleep(5000);
-        // String scrollTitle =
-        // driver.findElement(AppiumBy.id("com.brevistay.customer:id/benefit3_Txt")).getText();
-        // // SwipeElementtoDirection(benefitCard, "up");
-        // Thread.sleep(5000);
-        // ScrollTOTextElement(scrollTitle);
         Thread.sleep(5000);
     }
 }
