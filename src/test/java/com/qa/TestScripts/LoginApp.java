@@ -29,12 +29,13 @@ public class LoginApp extends BaseConfigurationServer {
         object1.EnterPassword().click();
         object1.EnterPassword().sendKeys("Shashi@8131#");
         Thread.sleep(7000);
+        driver.hideKeyboard();
         object1.clickProceedButton().click();
-        takeScreenshot(driver, "src\\test\\java\\com\\Screenshots\\LoginPage.png");
+        takeScreenshot(driver, "Screenshots\\LoginPage.png");
         Thread.sleep(15000);
         System.out.println("Entered to homescreen");
         Thread.sleep(10000);
-        takeScreenshot(driver, "src\\test\\java\\com\\Screenshots\\HomeScreen.png");
+        takeScreenshot(driver, "Screenshots\\HomeScreen.png");
         WebElement titleHomepageString = driver.findElement(AppiumBy.id("com.brevistay.customer:id/textView25"));
         String nameTitle = titleHomepageString.getText();
         System.out.println(nameTitle);

@@ -40,7 +40,7 @@ public class BaseConfigurationServer {
         capabilities.setCapability("app",
                 "C:\\Users\\shash\\eclipse-workspace\\BrevistayAutomation\\src\\test\\java\\TestResources\\Brevistay.apk");
         capabilities.setCapability("automationName", "UiAutomator2");
-        capabilities.setCapability("deviceName", "Pixel 3a");
+        capabilities.setCapability("deviceName", "Pixel 2 API 30");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         object1 = new BervistayPOM(driver);
