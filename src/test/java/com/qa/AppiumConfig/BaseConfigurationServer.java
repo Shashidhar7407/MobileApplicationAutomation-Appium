@@ -1,6 +1,17 @@
 package com.qa.AppiumConfig;
 
-import com.qa.PageObjectModel.*;
+import com.google.common.collect.ImmutableMap;
+import com.qa.PageObjectModel.BervistayPOM;
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.Activity;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,25 +19,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebElement;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-
-import com.google.common.collect.ImmutableMap;
-
-import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.Activity;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-
-public class BaseConfigurationServer {
+public class BaseConfigurationServer{
     public AndroidDriver driver;
     public AppiumDriverLocalService service;
     public BervistayPOM object1;
@@ -40,7 +33,7 @@ public class BaseConfigurationServer {
         capabilities.setCapability("app",
                 "C:\\Users\\shash\\eclipse-workspace\\BrevistayAutomation\\src\\test\\java\\TestResources\\Brevistay.apk");
         capabilities.setCapability("automationName", "UiAutomator2");
-        capabilities.setCapability("deviceName", "Pixel 2 API 30");
+        capabilities.setCapability("deviceName", "Pixel 2");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         object1 = new BervistayPOM(driver);

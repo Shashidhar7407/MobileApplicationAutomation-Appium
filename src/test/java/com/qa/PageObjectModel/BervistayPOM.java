@@ -59,6 +59,37 @@ public class BervistayPOM extends BaseConfigurationServer {
         return getProceed;
     }
 
+    @AndroidFindBy(id = "com.brevistay.customer:id/nearByCity_img")
+     WebElement nearByCityImage;
+
+    public WebElement selectnearByCityImage(){
+        return nearByCityImage;
+    }
+
+    @AndroidFindBy(id = "com.brevistay.customer:id/searchRes_changeCity")
+    WebElement changeCityButton;
+      public WebElement selectchangeCityButton(){
+        return changeCityButton;
+    }
+
+    @AndroidFindBy(id = "com.brevistay.customer:id/city_editText")
+    WebElement citySearchBox;
+        public WebElement selectcitySearchBox(){
+        return citySearchBox;
+    }
+
+    @AndroidFindBy(id = "com.brevistay.customer:id/Search_listItem_city")
+    WebElement citySearchResult;
+          public WebElement getCitySearchResult(){
+        return citySearchResult;
+    }
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ImageView")
+    WebElement closePopupButton;
+            public WebElement clickClosePopupButton(){
+        return closePopupButton;
+    }
+
     public static void Sleep(int seconds) throws InterruptedException {
         Thread.sleep(seconds);
     }

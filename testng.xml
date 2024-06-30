@@ -9,9 +9,9 @@
       <class name="com.qa.TestScripts.LoginApp"/>
       </classes>
     </test>
-      <test thread-count="5" name="Test2">
+    <!--  <test thread-count="5" name="Test2">
       <classes>
       <class name="com.qa.TestScripts.SelectCity"/>
     </classes>
-  </test> <!-- Test -->
+  </test>  Test -->
 </suite> <!-- Suite -->

@@ -1,16 +1,12 @@
 package com.qa.TestScripts;
 
-// import com.qa.PageObjectModel.*;
-import com.qa.AppiumConfig.*;
-
+import com.qa.AppiumConfig.BaseConfigurationServer;
 import io.appium.java_client.AppiumBy;
-// import io.appium.java_client.android.AndroidDriver;
-// import io.appium.java_client.android.AndroidDriver;
-
-import java.io.IOException;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 public class LoginApp extends BaseConfigurationServer {
     @Test
@@ -43,6 +39,7 @@ public class LoginApp extends BaseConfigurationServer {
         WebElement benefitCard = driver.findElement(AppiumBy.id("com.brevistay.customer:id/textView_Offer"));
         String benefitCardString = benefitCard.getText();
         System.out.println(benefitCardString);
+        driver.findElement(By.name("shashidhar")).click();
         Thread.sleep(5000);
         Thread.sleep(5000);
     }
